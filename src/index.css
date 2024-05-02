@@ -1,13 +1,92 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+[data-theme = "dark"]{
+    --background : rgb(32, 32, 32);
+    --h1 : white;
+    --h2 : white;
+    --h3 : white;
+    --h4 : white;
+    --h5 : white;
+    --h6 : white;
+    --header : rgb(32, 32, 32);
+    --header-icons : white;
+    --header-Link : white;
+    --header-input : rgb(22, 22, 22);
+    --sidebar : rgb(32, 32, 32);
+    --sidebar-icons : white;
+    --component-icons : white;
+    --component-text : white;
+    --progress-bar : white;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+[data-theme = "light"]{
+    --background : white;
+    --h1 : rgb(34, 34, 34);
+    --h2 : rgb(34, 34, 34);
+    --h3 : rgb(34, 34, 34);
+    --h4 : rgb(34, 34, 34);
+    --h5 : rgb(34, 34, 34);
+    --h6 : rgb(34, 34, 34);
+    --header-Link : rgb(34, 34, 34);
+    --header-icons : rgb(34, 34, 34);
+    --header : rgb(241, 241, 241);
+    --header-input : white;
+    --sidebar-icons : rgb(34, 34, 34);
+    --sidebar : rgb(241, 241, 241);
+    --component-icons : #3D27E8;
+    --component-text : #1B2659;
+    --progress-bar : #3D27E8;
+}
+
+body{
+    background-color: var(--background);
+}
+body h1{
+    color: var(--h1);
+}
+body h2{
+    color: var(--h2);
+}
+body h3{
+    color: var(--h3);
+}
+body h4{
+    color: var(--h4);
+}
+body h5{
+    color: var(--h5);
+}
+body h6{
+    color: var(--h6);
+}
+body .header{
+    background-color: var(--header);
+}
+.header .input-field{
+    background-color: var(--header-input);
+}
+.header .link{
+    color: var(--header-Link) ;
+}
+body .header .header-icons {
+    color: var(--header-icons);
+}
+body .sidebar{
+    background-color: var(--sidebar);
+}
+body .sidebar-icons {
+    color: var(--sidebar-icons);
+}
+body .component-icons{
+    color: var(--component-icons);
+}
+body .component-text{
+    color: var(--component-text);
+}
+body .develop_bar{
+    background-color: var(--progress-bar);
 }

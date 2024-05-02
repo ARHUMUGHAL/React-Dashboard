@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import Dashboard from "./Pages/MainDashboard";
+import DataTable from "./Pages/DataTables";
+import NftMarketplace from "./Pages/NftMarketplace";
+import Login from "./Components/Auth/Login";
+import Register from "./Components/Auth/Register";
+import ProtectedRoutes from "./Services/ProtectedRoutes";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/register" element={<Register />} />
+      <Route path="/login" element={<Login />} />
+
+      <Route path="/" element={<ProtectedRoutes/>}>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/datatables" element={<DataTable />} />
+        <Route path="/nftmarketplace" element={<NftMarketplace />} />
+      </Route>
+    </Routes>
   );
 }
 
